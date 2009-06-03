@@ -1,0 +1,240 @@
+/*
+	Title:	Tiny Doodle Theme
+	Author: Andrew Mason
+	Contact: amason at gmail dot com
+
+*/
+
+/*	Common HTML styles
+----------------------------------------------------------------------*/
+
+
+
+/*	Typography
+----------------------------------------------------------------------*/
+BODY {
+    font-family: verdana, helvetica, sans-serif;
+    font-size: 0.7em;
+    line-height: 1.4em;
+    margin-top: 20px;
+}
+
+H1 {
+    font-size: 3em;
+    margin-bottom: .5em;
+    text-align: center;
+}
+
+H1 A {
+    text-decoration: none;
+    color: #000;
+}
+
+H2 {
+    font-size: 2em;
+}
+
+STRONG {
+    font-weight: bold;
+}
+
+/*	Colours
+----------------------------------------------------------------------*/
+BODY {
+        background-color: #FFF;
+}
+
+
+/*	Structure
+----------------------------------------------------------------------*/
+
+BODY#viewing {
+    text-align: center;
+}
+
+#doodle_image {
+    margin-bottom: 20px;
+}
+
+#container {
+    width: 530px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#column1 {
+    width: 335px;
+    float: left;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+#column2 {
+    width: 180px;
+    float: right;
+    overflow: hidden;
+}
+
+#canvas_wrapper {
+    background-image: url(/static/images/canvas_background.png);
+    background-position: left top;
+    background-repeat: no-repeat;
+    padding: 3px 3px 3px 7px;
+}
+
+#doodle_canvas {
+    margin-bottom: 1em;
+}
+
+#no_doodle_canvas {
+
+}
+
+#instructions H2 {
+    margin-bottom: 10px;
+}
+
+#instructions IMG {
+    margin: 5px 0;
+}
+
+#notification {
+    clear: both;
+    border: 1px dashed red;
+    padding: 1em;
+    text-align: center;
+    
+    display: none;
+}
+
+#output {
+    overflow: hidden;
+    clear: both;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#output H2 {
+    text-align: center;
+    margin: 0;
+}
+
+#output IMG {
+    float: left;
+    margin-right: 5px;
+    border: 1px solid #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#output IMG.active {
+    border: 4px solid #000;
+}
+
+
+#credits {
+    margin-top: 20px;
+    border-top: 1px solid #CCC;
+    color: #CCC;
+    font-size: 90%;
+    text-align: center;
+}
+
+#credits A {
+    color: #999;
+}
+
+#create_own {
+    float: left;
+}
+#create_own A {
+    display: block;
+    background-color: #FFC;
+    padding: 10px;
+    font-size: 2em;
+    color: #000;
+    text-decoration: none;
+    border: 1px solid #222;
+}
+
+#links {
+    float: left;
+    text-align: left;
+    margin-left: 10px
+}
+
+#viewcount {
+    clear: both;
+    color: #999;
+    padding-top: 10px;
+}
+
+
+/* Share links */
+#share H2 {
+    cursor: pointer;
+}
+
+/*	Controls
+----------------------------------------------------------------------*/
+#controls {
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+#controls DIV {
+    float: left;
+    font-size: 1.6em;
+    padding: 2px 10px;
+    padding-left: 30px;
+    margin-right: 5px;
+    background-position: left top;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+#controls DIV:active {
+    margin-top: 1px;
+    margin-left: 1px;
+}
+
+#controls .active {
+    background-color: #FF9;
+}
+
+#controls #eraser,
+#controls #pen
+{
+    float: right;
+}
+
+#save {
+    background-image: url(/static/images/save.png);
+}
+
+#new {
+    background-image: url(/static/images/new.png);
+}
+
+#pen {
+    background-image: url(/static/images/pen.png);
+}
+
+#eraser {
+    background-image: url(/static/images/eraser.png);
+}
+
+/*	Global Styles
+----------------------------------------------------------------------*/
+.clearfix {
+	display: inline-block;
+}
+
+.clearfix:after {
+	clear: both;
+	content: '.';
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+.remove { display: none }

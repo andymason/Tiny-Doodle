@@ -1,0 +1,53 @@
+/*
+	Title:	Uber Layout Theme
+	Date: 15th July 2008
+	Author: Andrew Mason
+	Contact: amason@digitas.com
+	
+	Version: 0,1
+	
+	Contents:
+		* Common HTML styles
+		* Typography
+		* Colours
+		* Structure
+		* Global Styles
+		
+	
+	Change log:
+		0.1		+ Initial creation
+				+ Defined Layout structure
+				+ 
+*/
+
+/*	Common HTML styles
+----------------------------------------------------------------------*/
+
+
+/*	Typography
+----------------------------------------------------------------------*/
+
+
+/*	Colours
+----------------------------------------------------------------------*/
+
+
+/*	Structure
+----------------------------------------------------------------------*/
+
+
+/*	Global Styles
+----------------------------------------------------------------------*/
+.clearfix {
+	display: inline-block;
+}
+
+.clearfix:after {
+	clear: both;
+	content: '.';
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+.remove { display: none }

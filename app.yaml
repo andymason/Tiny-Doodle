@@ -1,0 +1,26 @@
+application: tinydoodle
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /
+  script: home.py
+
+- url: /save
+  script: home.py
+
+- url: /image
+  script: home.py
+
+- url: /thumb
+  script: home.py
+  
+- url: /view
+  script: home.py
+  
+- url: /static
+  static_dir: static
+
+- url: /.*
+  script: home.py
