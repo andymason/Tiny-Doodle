@@ -122,7 +122,7 @@ doodle.loadDoodles = function(cookie) {
 
 doodle.saveImage = function(ev) {
     // Extract the Base64 data from the canvas and post it to the server
-    base64 = doodle.canvas.toDataURL();
+    base64 = doodle.canvas.toDataURL("image/png");
     if(!doodle.updating) {
         $.post('/save', {img: base64}, function(data) {doodle.updateThumb(data)});
     } else {
@@ -132,7 +132,7 @@ doodle.saveImage = function(ev) {
 
 doodle.updateThumb = function(data) {
     // Notify the user that the image has been saved
-    $(doodle.noticeID).html('Saved');
+    //$(doodle.noticeID).html('Saved');
 
     var thumb = $('img.active');
     // Reset the thumb image
