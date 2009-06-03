@@ -239,6 +239,7 @@ doodle.clearCanvas = function(ev) {
 }
 
 doodle.drawStart = function(ev) {
+    ev.preventDefault();
     // Calculate the current mouse X, Y coordinates with canvas offset
     var x, y;
     x = ev.pageX - $(doodle.canvas).offset().left;

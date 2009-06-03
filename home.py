@@ -18,8 +18,18 @@ class MainPage(webapp.RequestHandler):
             'title': '',
             'heading': 'Tiny Doodle',
             'domain': os.environ["SERVER_NAME"],
+            'mobile':   False,
             }
+        
         path = os.path.join(os.path.dirname(__file__), 'templates/index.html')
+        
+        # Detect if the user is using a mobile (iphone/android)
+        # and use different theme
+        uastring = self.request.headers.get('user_agent')
+        if "Mobile" in uastring and "Safari" in uastring:
+            path = os.path.join(os.path.dirname(__file__), 'templates/mobile.html')
+            template_values['mobile'] = True
+            
         self.response.out.write(template.render(path, template_values))
 
 class SaveImage(webapp.RequestHandler):

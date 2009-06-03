@@ -62,11 +62,21 @@ BODY#viewing {
     overflow: hidden;
 }
 
+#mobile #container {
+    width: auto;
+    text-align: center;
+}
+
 #column1 {
     width: 335px;
     float: left;
     overflow: hidden;
     margin-bottom: 10px;
+}
+
+#mobile #column1 {
+    width: auto;
+    float: none;
 }
 
 #column2 {
@@ -80,6 +90,12 @@ BODY#viewing {
     background-position: left top;
     background-repeat: no-repeat;
     padding: 3px 3px 3px 7px;
+
+}
+
+#mobile #canvas_wrapper {
+    padding: 0;
+    background: none;
 }
 
 #doodle_canvas {
@@ -148,6 +164,8 @@ BODY#viewing {
 #create_own {
     float: left;
 }
+
+
 #create_own A {
     display: block;
     background-color: #FFC;
@@ -181,6 +199,8 @@ BODY#viewing {
 #controls {
     overflow: hidden;
     margin-bottom: 10px;
+    width: 320px;
+    margin: 0 auto;
 }
 
 #controls DIV {
