@@ -93,7 +93,7 @@ doodle.init = function() {
     $(doodle.canvas).bind('mousedown', doodle.drawStart);
     $(doodle.canvas).bind('mousemove', doodle.draw);
     $(doodle.canvas).bind('mouseup', doodle.drawEnd);
-    $(doodle.canvas).bind('mouseout', doodle.drawEnd);
+    $('body').bind('mouseup', doodle.drawEnd);
     
     // Touch screen based interface
     $(doodle.canvas).bind('touchstart', doodle.drawStart);

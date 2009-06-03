@@ -84,6 +84,7 @@ BODY#viewing {
 
 #doodle_canvas {
     margin-bottom: 1em;
+    cursor: crosshair;
 }
 
 #no_doodle_canvas {
