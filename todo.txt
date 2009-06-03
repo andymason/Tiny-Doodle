@@ -1,13 +1,14 @@
-Ideas to add to Tiny Doole
+Ideas to add to Tiny Doodle
 --------------------------
 
 * Add keyboard shortcuts
 * Add status messages. Eg. Loading, saving etc
 * Better buttons
 * Add title to doodles
-* Sesson security
+* Session security
 * Cookie saved doodles
 * Top viewed doodles
-* Stared(favorited) doodles
-* Embed doode on a external website
-* Doodle onyour own site
+* Stared(favorite) doodles
+* Embed doodle on a external website
+* Doodle on your own site
+* Collaborative doodles in real-time
