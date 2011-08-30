@@ -16,7 +16,7 @@
     
     Author:         Andrew Mason
     Contact:        a.w.mason at gmail dot com
-    Author's Site:  http://analoguesignal.com/
+    Author's Site:  http://coderonfire.com/
     
     Requirements:
         * Jquery 1.3+
@@ -74,6 +74,7 @@ doodle.init = function() {
     // Collect elements from the DOM and set-up the canvas
     doodle.canvas = $('#doodle_canvas')[0];
     doodle.context = doodle.canvas.getContext('2d');
+    doodle.oldState = doodle.context.getImageData(0, 0, 320, 240);
     
     // Check if there is data in the domain cookie and try to load doodles
     if ($.cookie('doodles')) {
@@ -93,6 +94,9 @@ doodle.init = function() {
     $(doodle.canvas).bind('mousedown', doodle.drawStart);
     $(doodle.canvas).bind('mousemove', doodle.draw);
     $(doodle.canvas).bind('mouseup', doodle.drawEnd);
+    $(doodle.canvas).bind('mouseleave', function() {
+        doodle.context.putImageData(doodle.oldState, 0, 0);
+    });
     $('body').bind('mouseup', doodle.drawEnd);
     
     // Touch screen based interface
@@ -252,25 +256,41 @@ doodle.drawStart = function(ev) {
     doodle.oldY = y;
 }
 
-doodle.draw = function(ev) {
+doodle.draw = function(event) {
+
     // Calculate the current mouse X, Y coordinates with canvas offset
     var x, y;
-    x = ev.pageX - $(doodle.canvas).offset().left;
-    y = ev.pageY - $(doodle.canvas).offset().top;
+    x = event.pageX - $(doodle.canvas).offset().left;
+    y = event.pageY - $(doodle.canvas).offset().top;
     
     // If the mouse is down (drawning) then start drawing lines
     if(doodle.drawing) {
+        doodle.context.putImageData(doodle.oldState, 0, 0);
         doodle.context.beginPath();
         doodle.context.moveTo(doodle.oldX, doodle.oldY);
         doodle.context.lineTo(x, y);
         doodle.context.closePath();
         doodle.context.stroke();
+        doodle.oldState = doodle.context.getImageData(0, 0, 320, 240);
+    } else {
+    
+        doodle.context.putImageData(doodle.oldState, 0, 0);
+        
+        doodle.context.beginPath();
+        doodle.context.arc(x, y, 10, 0, 2 * Math.PI, false);
+     
+        doodle.context.lineWidth = 1;
+        doodle.context.strokeStyle = "black";
+        doodle.context.stroke();
+    
     }
     
     // Store the current X, Y position
     doodle.oldX = x;
     doodle.oldY = y;
+    
 };
+
 
 // Finished drawing (mouse up)
 doodle.drawEnd = function(ev) {
@@ -310,6 +330,3 @@ doodle.eraser = function() {
     // Remove active state from pen
     $(doodle.penID).removeClass('active');
 }
-
-
-

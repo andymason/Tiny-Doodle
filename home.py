@@ -1,4 +1,5 @@
-﻿import os
+﻿# This Python file uses the following encoding: utf-8
+import os
 import base64
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app

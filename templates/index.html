@@ -30,61 +30,48 @@
 		<div id="container"> <!-- container. start -->
             <h1>{{ heading }}</h1>
                     
-            <div id="column1">
-                <div id="canvas_wrapper">
-                    <canvas width="320" height="240" id="doodle_canvas">
-                        <div id="no_doodle_canvas">
-                            <code>canvas</code> element not supported.
-                        </div>
-                    </canvas>
-                </div>
-                
-                <div id="controls">
-                    <div id="save">
-                        Save
+            <div id="canvas_wrapper">
+                <canvas width="320" height="240" id="doodle_canvas">
+                    <div id="no_doodle_canvas">
+                        <code>canvas</code> element not supported.
                     </div>
-                    <div id="new">
-                        New
-                    </div>
-                    <div id="pen" class="active">
-                        Pen
-                    </div>
-                    <div id="eraser">
-                        Eraser
-                    </div>
-                </div>
-                
-                <!--
-                <div id="details">
-                    <label for="title">Doodle title</label>
-                    <input type="text" maxlength="30" id="title" name="title" />
-                </div>
-                -->
-                
+                </canvas>
             </div>
             
-            
-            <div id="column2">
-                <div id="instructions">
-                    <h2>Instructions</h2>
-                    <p>Click &amp; doodle inside the box to create your own tiny doodle.</p>
-                    <img src="/static/images/instructions.png" alt="doodle instructions" />
-                </div>
-                
-                <div id="share">
-                    <h2>+ Share Doodle</h2>
-                    <div>
-                        <ul>
-                            <li>Facebook it</li>
-                            <li>Twitter it</li>
-                            <li>Email it</li>
-                            <li>Download it</li>
-                            <li>Copy link</li>
-                        </ul>
-                    </div>
-                </div>
-                
+            <!--
+            <div id="details">
+                <label for="title">Doodle title</label>
+                <input type="text" maxlength="30" id="title" name="title" />
             </div>
+            -->
+            
+            
+            <div id="instructions">
+                <h2>Instructions</h2>
+                <p>Click &amp; doodle inside the box to create your own tiny doodle.</p>
+                <img src="/static/images/instructions.png" alt="doodle instructions" />
+            </div>
+            
+            <div id="share">
+                <h2>+ Share Doodle</h2>
+                <div>
+                    <ul>
+                        <li>Facebook it</li>
+                        <li>Twitter it</li>
+                        <li>Email it</li>
+                        <li>Download it</li>
+                        <li>Copy link</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="controls">
+                <button id="save">Save</button>
+                <button id="new">New</button>
+                <button id="pen" class="active">Pen</button>
+                <button id="eraser">Eraser</button>
+            </div>
+
             
             <div id="notification">
             </div>
@@ -96,7 +83,7 @@
             <div id="credits">
                 <p>
                     Created by
-                    <a href="http://analoguesignal.com/">
+                    <a href="http://coderonfire.com/">
                         Andrew Mason
                     </a>.
                     Built with Python and
@@ -108,29 +95,22 @@
 		</div><!-- container. end -->
 		
 		<!-- JavaScript  -->
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
         <script type="text/javascript" src="/static/scripts/jquery.cookie.js"></script>
         <script type="text/javascript" src="/static/scripts/doodle.js"></script>
-        <script src="/static/scripts/cufon-yui.js" type="text/javascript"></script>
-        <script src="/static/scripts/radiohead_400.font.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                Cufon.replace('h1');
-                Cufon.replace('h2');
-                Cufon.replace('#controls DIV');
-            });
-        </script>
         
         <!-- Google Analytics -->
         <script type="text/javascript">
-        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-9094153-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
         </script>
-        <script type="text/javascript">
-        try {
-        var pageTracker = _gat._getTracker("UA-9094153-1");
-        pageTracker._trackPageview();
-        } catch(err) {}</script>
                 
 	</body>
 </html>
